@@ -1,0 +1,6 @@
+#homeContainer tr {
+  vertical-align: top;
+}
+.home-form input[type=text], .home-form input[type=password], .form-control { 
+	width: 720px; 
+}

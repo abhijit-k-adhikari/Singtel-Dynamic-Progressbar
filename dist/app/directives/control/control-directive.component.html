@@ -1,0 +1,36 @@
+<table id="summaryContainer" class="contentContainer" contentContainerHeight>
+    <tbody>
+        <tr>
+            <td>
+                <h5>{{_genratedEndPointStr}}</h5>
+                <hr/>
+                <h4>Select Progressbar</h4>
+                <jqxDropDownList #progressbarDDL [auto-create]='false' (onChange)='onChangeEvent($event)'>
+                </jqxDropDownList>              
+
+                <hr/>
+
+                <h4>Progressbar</h4>
+                <div *ngFor="let pb of progressBars">
+                    <progressbar class="progress-striped" [animate]="true" [value]="pb.currentValue" [type]="pb.progressbarType" [max]="pb.maxValue">
+                        <span style="color:white; white-space:nowrap;">{{pb.currentValue}} / {{pb.maxValue}} (<b>{{pb.percetageValue}}%)</b></span>
+                    </progressbar>
+                </div>
+                <hr/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style="margin: 0px auto 0px auto;">
+                    <tr>
+                        <span *ngFor="let bn of buttons">
+                            <td style="text-align: center; vertical-align: middle">
+                                <button type="button" class="btn btn-sm btn-default" (click)="generateNewProgressValues(bn.content)">{{bn.content}}</button>
+                            </td>
+                        </span>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table>

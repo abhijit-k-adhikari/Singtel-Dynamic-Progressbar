@@ -1,0 +1,26 @@
+<div id="homeContainer" class="contentContainer">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-5 col-md-5 col-sm-8 col-xs-9 bhoechie-tab-container">
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 bhoechie-tab-menu">
+					<div class="list-group">
+						<a href="#" class="list-group-item active text-center">
+							<h4 class="glyphicon glyphicon-cog"></h4><br/>Setup Endpoint
+						</a>						
+						<a href="#" class="list-group-item text-center">
+							<h4 class="glyphicon glyphicon-tasks"></h4><br/>Progressbars
+						</a>
+					</div>
+				</div>
+				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 bhoechie-tab">				
+					<div class="bhoechie-tab-content active">
+						<home-directive (cacheUpdated)="cacheUpdated($event)"></home-directive>
+					</div>		
+					<div class="bhoechie-tab-content">
+						<my-progressbar [endPoint]="endpoint"></my-progressbar>
+					</div>	
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

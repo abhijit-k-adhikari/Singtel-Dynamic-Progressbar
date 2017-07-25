@@ -1,0 +1,101 @@
+<table id="mainContainer">
+	<tr class="header">
+		<td class="logo">
+			<img src="../app/assets/images/mylogo.jpg" alt="Logo" class="logo">
+		</td>
+		<td class="my-text">
+			<span style="margin-left: 15px">Progressbar&nbsp;Assignment</span>
+		</td>
+		<td>
+			<div class="pull-right">
+				<table>
+					<tbody>
+						<tr>
+							<td>
+
+								<span>&nbsp;&nbsp;<i class="fa fa-user" aria-hidden="true" style="color:green"></i>&nbsp;&nbsp;</span>
+							</td>
+							<td>
+								<span id="lblOneBankId_Dashboard">{{_userName | uppercase}}</span>
+							</td>
+							<td>
+								<span class="separator">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+								<span><i class="fa fa-calendar" aria-hidden="true" style="color:green"></i>&nbsp;&nbsp;</span>
+							</td>
+							<td>
+								<span>Business&nbsp;Date:&nbsp;</span>
+							</td>
+							<td>
+								<span id="lblBusinessDate_Dashboard">{{_businessDate}}</span>
+							</td>
+							<td>
+								<span class="separator">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+								<span><i class="fa fa-clock-o" aria-hidden="true" style="color:green"></i>&nbsp;&nbsp;</span>
+							</td>
+							<td>
+								<span>Login&nbsp;Time:&nbsp;</span>
+							</td>
+							<td>
+								<span id="lblLoginDateTime_Dashboard">{{_loginTime}}</span>
+							</td>
+							<td>
+								<span class="separator">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+								<span><i class="fa fa-globe" aria-hidden="true" style="color:green"></i>&nbsp;&nbsp;</span>
+							</td>
+							<td>
+								<span id="lblLocation_Dashboard">{{_locationName}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+							</td>
+							<td style="background:#EE1818; height:50px; width: 90px;cursor: pointer" (click)="logOut()">
+								<div>
+									<span><i class="fa fa-sign-out" aria-hidden="true" style="margin-left:10px;margin-right:-5px;color:white"></i>&nbsp;&nbsp;</span>
+									<span style="margin-left:2px">Logout</span>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="3" style="background:#EE1818;height:3px">
+		</td>
+	</tr>
+	<tr class="navigation">
+		<td colspan="3">
+			<table class="menus">
+				<tr>
+					<td>
+						<div id="navs">
+							<ul>
+								<li [class.active]="isActive('MAIN')">
+									<a href="#" [routerLink]="['main']" (click)="onMenuSelected('MAIN')">
+										<i class="fa fa-home"></i>
+										<span>Dashboard</span>
+									</a>
+								</li>
+								<li [class.active]="isActive('CONFIGURATION')">
+									<a href="#" [routerLink]="['config']" (click)="onMenuSelected('CONFIGURATION')">
+										<i class="fa fa-braille"></i>
+										<span>Configuration</span>
+									</a>
+								</li>
+								<li [class.active]="isActive('HELP')">
+									<a href="#" [routerLink]="['help']" (click)="onMenuSelected('HELP')">
+										<i class="fa fa-chain-broken"></i>
+										<span>Help</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr class="content">
+		<td colspan="3">
+			<router-outlet></router-outlet>
+		</td>
+	</tr>
+</table>

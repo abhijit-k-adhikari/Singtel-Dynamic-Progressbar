@@ -1,0 +1,65 @@
+<table class="container-fluid" id="homeContainer" class="contentContainer" contentContainerHeight>
+    <tbody>
+        <tr>
+            <td>
+                <table style="margin: 10px auto 0px auto;">
+                    <tr>
+                        <td style="text-align: center">
+                            <div>
+                                <h4 style="color: #0E3C54">Please configure the endpoint values correctly</h4>
+                                <h4 style="color: #0E3C54">Currently there is no validation for the entered data</h4>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center">
+                            <div class="home-form" style="margin-top: 50px; margin-bottom: 50px">
+                                <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+
+                                    <div class="form-group">
+                                        <div class="label">
+                                            <i class="fa fa-user" aria-hidden="true"></i>
+                                            <label _ngcontent-iod-18="" for="buttons" style="color: Gray; font-size: 16px;margin-left: -680px;">Buttons</label>
+                                        </div>
+                                        <input id="txtButtons" type="text" placeholder="Enter comma seperated buttons values e.q. 23,34,51,89" class="form-control"
+                                            required name="buttons_uniquename" [(ngModel)]="_buttons">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="label">
+                                            <i class="fa fa-lock" aria-hidden="true"></i>
+                                            <label _ngcontent-iod-18="" for="bars" style="color: Gray; font-size: 16px;margin-left: -700px;">Bars</label>
+                                        </div>
+                                        <input id="txtBars" type="text" placeholder="Enter comma seperated bars values e.q. 12,3,45" class="form-control" required
+                                            name="bars_uniquename" [(ngModel)]="_bars">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="label">
+                                            <i class="fa fa-lock" aria-hidden="true"></i>
+                                            <label _ngcontent-iod-18="" for="limit" style="color: Gray; font-size: 16px;margin-left: -700px;">Limit</label>
+                                        </div>
+                                        <input id="txtLimit" type="text" placeholder="Enter limit values e.q. 237" class="form-control" required name="limit_uniquename"
+                                            [(ngModel)]="_limit">
+                                    </div>
+
+                                    <button id="btnLogon_Login" type="submit" class="btn btn-success login-btn" [disabled]="!loginForm.form.valid"><i class="fa fa-hand-o-right" aria-hidden="true"></i> Generate Progressbars</button>
+                                    <button id="btnReset_Login" type="button" class="btn btn-danger login-btn" (click)="resetClicked()"><i class="fa fa-undo" aria-hidden="true"></i> Reset</button>
+
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">
+                            <div>
+                                <h4>{{_genratedEndPointStr}}</h4>
+                                <h5 style="color: green">{{_gotoStr}}</h5>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table>
